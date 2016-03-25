@@ -1,26 +1,20 @@
-// Copyright (c) 2011 The Chromium Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
-
-function get_translation(word) {
-  console.log(word);
-
+function displayTranslation(translatedText) {
   var translation = $('#translation');
-  translation.text("This is a test.");
-  translation.click(function () {
-    window.close();
-  });
-}
+  translation.text(translatedText);
+};
 
+function getTranslation(word) {
+  // TODO: call translation service
+  return word;
+}
 
 function translate() {
   var word = chrome.extension.getBackgroundPage().selectedWord;
-  var otherword = chrome.extension.getBackgroundPage().logmsg;
-  console.log(word);
-  console.log(otherword);
-  if (true)
-    get_translation(word);
+  if (word) {
+    translatedText = getTranslation(word);
+    displayTranslation(translatedText);
+  }
 }
 
 window.onload = translate;
-
+window.onclick = window.close;
