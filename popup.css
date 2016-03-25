@@ -9,7 +9,47 @@ body {
   padding: 0px;
 }
 
-#translation {
-  width: 350px;
-  height: 128px;
+.container {
+  margin: 0px;
+  padding: 0px;
+  width: 400px;
+
+  background-color:#f0f0f0;
 }
+
+#translation {
+  display: block;
+  text-align: center;
+  vertical-align: middle;
+
+  font-family: verdana;
+  font-size:14pt;
+  text-align: center;
+  vertical-align: center;
+
+  padding:10px;
+
+}
+
+#giphy {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#info {
+  display: block;
+  height: 32px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 32px;
+
+  background-color:#deebf7;
+  color:#3182bd;
+  font-family:arial;
+  font-size:11pt;
+}
+
