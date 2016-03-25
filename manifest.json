@@ -5,7 +5,7 @@
   "icons": { "256": "marker.png" },
   "background": { "scripts": ["background.js"] },
   "content_scripts": [
-    { "matches": ["http://*/*"],
+    { "matches": ["http://*/*", "https://*/*"],
       "js": ["translator_content_script.js"]
     }
   ],

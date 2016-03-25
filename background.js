@@ -45,7 +45,7 @@ var logmsg = 'original';
 
 chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
   if ((message.type) == "sendText") {
-    alert("got text ");
+    alert("got text " + message.text);
     // sendResponse(findWord());
 
   }

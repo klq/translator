@@ -1,4 +1,3 @@
-alert("here");
 // Copyright (c) 2011 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -20,20 +19,16 @@ alert("here");
 
 // Search the text for selected word
 // Return null if none is found.
-var findWord = function() {
-  return 'new stuff hello world';
-  var word = window.getSelection().toString();
-};
+// var findWord = function() {
+//   return 'new stuff hello world';
+//   var word = window.getSelection().toString();
+// };
 
 var sendSelectedText = function(){
-  alert('send');
   chrome.runtime.sendMessage({"type": "sendText", "text": "this is a test"});
 };
 
-// window.onselect.addListener()
 var bodies = document.getElementsByTagName("body");
-console.log(bodies.length);
 if (bodies) {
-  // bodies[0].onmouseup = sendSelectedText;
-  bodies[0].onmouseup = function(){alert("mouse up");};
+  bodies[0].onmouseup = sendSelectedText;
 }
