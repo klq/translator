@@ -19,8 +19,8 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
 // Search the text for selected word
 // Return null if none is found.
 var findWord = function() {
-  return 'new stuff hello world';
-  var word = window.getSelection().toString();
+  return "many many new stuff";
+  // return window.getSelection().toString();
 };
 
 window.onselect.addListener()

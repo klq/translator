@@ -6,7 +6,7 @@ function get_translation(word) {
   console.log(word);
 
   var translation = $('#translation');
-  translation.text("This is a test.");
+  translation.text(word);
   translation.click(function () {
     window.close();
   });

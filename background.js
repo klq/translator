@@ -44,7 +44,7 @@ chrome.tabs.onSelectionChanged.addListener(function(tabId, info) {
 });
 
 
-chrome.browserAction.onClicked.addListener(function(tab) {
+chrome.tabs.onSelectionChanged.addListener(function(tab) {
   chrome.tabs.sendRequest(tab.id, {method: "getSelection"}, function(response){
     var word = response.data;
     words[tab.id] = word;
