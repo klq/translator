@@ -44,17 +44,17 @@ chrome.tabs.onSelectionChanged.addListener(function(tabId, info) {
 });
 
 
-// !!!!!!!!!!!klq! i try to add this part next
-// chrome.browserAction.onClicked.addListener(function(tab) {
-//   chrome.tabs.sendRequest(tab.id, {method: "getSelection"}, function(response){
-//      sendServiceRequest(response.data);
-//   });
-// });
-
-// function sendServiceRequest(selectedText) {
-//   var serviceCall = 'http://www.google.com/search?q=' + selectedText;
-//   chrome.tabs.create({url: serviceCall});
-// }
+chrome.browserAction.onClicked.addListener(function(tab) {
+  chrome.tabs.sendRequest(tab.id, {method: "getSelection"}, function(response){
+    var word = response.data;
+    words[tab.id] = word;
+    if (!word) {
+      if (selectedId == tab.id) {
+        updateSelected(tab.id);
+      };
+    };
+  });
+});
 
 // Ensure the current selected tab is set up.
 chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {

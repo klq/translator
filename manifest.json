@@ -14,7 +14,7 @@
     "https://maps.google.com/*",
     "https://maps.googleapis.com/*"
   ],
-  "page_action": {
+  "browser_action": {
       "default_name": "Translate word",
       "default_icon": "marker.png",
       "default_popup": "popup.html"
